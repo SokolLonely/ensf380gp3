@@ -1,3 +1,9 @@
+/**
+ * Class: Supply
+ * Date: Feb 25, 2026
+ * Completed by: Calvin Shaw
+ */
+
 package edu.ucalgary.oop;
 
 import java.lang.IllegalArgumentException;
@@ -7,6 +13,7 @@ public class Supply {
     private String type;
     private int quantity;
 
+    /* Throws IllegalArgumentException if quantity is less than 0 */
     public Supply(String type, int quantity) {
 
         if (quantity < 0) {
@@ -21,6 +28,7 @@ public class Supply {
         this.type = type;
     }
 
+    /* Throws IllegalArgumentException if quantity is less than 0 */
     public void setQuantity(int quantity) {
 
         if (quantity < 0) {
@@ -31,11 +39,11 @@ public class Supply {
     }
 
     public String getType() {
-        return type;
+        return this.type;
     }
 
     public int getQuantity() {
-        return quantity;
+        return this.quantity;
     }
 
 }
