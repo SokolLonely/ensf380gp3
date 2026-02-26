@@ -15,7 +15,7 @@ public class MedicalRecord {
     private LocalDate dateOfTreatment;
 
     // constructor
-    public MedicalRecord(Location location, String treatmentDetails, LocalDate dateOfTreatment){
+    public MedicalRecord(Location location, String treatmentDetails, LocalDate dateOfTreatment) throws IllegalArgumentException {
         if(location == null || treatmentDetails == null || dateOfTreatment == null){
             throw new IllegalArgumentException("Location, treatment details and date of treatment cannot be null.");
         }
@@ -40,7 +40,7 @@ public class MedicalRecord {
         return treatmentDetails;
     }
 
-    public void setTreatmentDetails(String treatmentDetails){
+    public void setTreatmentDetails(String treatmentDetails) throws IllegalArgumentException {
         if (treatmentDetails == null){
             throw new IllegalArgumentException("Treatment details cannot be null.");
         }
@@ -51,7 +51,7 @@ public class MedicalRecord {
         return dateOfTreatment;
     }
 
-    public void setDateOfTreatment(LocalDate dateOfTreatment){
+    public void setDateOfTreatment(LocalDate dateOfTreatment) throws IllegalArgumentException {
         if (dateOfTreatment == null){
             throw new IllegalArgumentException("Date of treatment cannot be null.");
         }
