@@ -14,7 +14,7 @@ public class Supply {
     private int quantity;
 
     /* Throws IllegalArgumentException if quantity is less than 0 */
-    public Supply(String type, int quantity) {
+    public Supply(String type, int quantity) throws IllegalArgumentException {
 
         if (quantity < 0) {
             throw new IllegalArgumentException();
@@ -29,7 +29,7 @@ public class Supply {
     }
 
     /* Throws IllegalArgumentException if quantity is less than 0 */
-    public void setQuantity(int quantity) {
+    public void setQuantity(int quantity) throws IllegalArgumentException {
 
         if (quantity < 0) {
             throw new IllegalArgumentException();
