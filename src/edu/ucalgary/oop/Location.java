@@ -16,9 +16,6 @@ public class Location {
 
     // constructor
     public Location(String locationName, String address){
-        if (locationName == null || address == null) {
-            throw new IllegalArgumentException("Name and address cannot be null.");
-        }
         this.name = locationName;
         this.address = address;
 
