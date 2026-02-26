@@ -47,7 +47,7 @@ public class DisasterVictim {
 
     public void setDateOfBirth(LocalDate dateOfBirth) throws IllegalArgumentException {
         if (dateOfBirth.isAfter(ENTRY_DATE)) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Birthdate cannot be set to a future date");
         }
         this.dateOfBirth = dateOfBirth;
     }
@@ -78,7 +78,7 @@ public class DisasterVictim {
 
     public void addPersonalBelonging(Supply belonging) throws IllegalArgumentException {
         if (belonging == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("belonging cannot be null");
         }
         if (personalBelongings == null) {
             personalBelongings = new Supply[0];
@@ -89,7 +89,7 @@ public class DisasterVictim {
 
     public void removePersonalBelonging(Supply belonging) throws IllegalArgumentException {
         if (personalBelongings == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("disaster victim has no personal belongings");
         }
         int index = -1;
         for (int i = 0; i < personalBelongings.length; i++) {
@@ -99,7 +99,7 @@ public class DisasterVictim {
             }
         }
         if (index == -1) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("belonging not found");
         }
         Supply[] newSupply = new Supply[personalBelongings.length-1];
         for (int i = 0; i < personalBelongings.length; i++) {
@@ -112,7 +112,7 @@ public class DisasterVictim {
 
     public void addFamilyConnection(FamilyRelation connection) throws IllegalArgumentException {
         if (connection == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("cannot add null connection");
         }
         if (familyConnections == null) {
             familyConnections = new FamilyRelation[0];
@@ -123,7 +123,7 @@ public class DisasterVictim {
 
     public void removeFamilyConnection(FamilyRelation connection) throws IllegalArgumentException {
         if (familyConnections == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("disaster victim has no connections");
         }
         int index = -1;
         for (int i = 0; i < familyConnections.length; i++) {
@@ -133,7 +133,7 @@ public class DisasterVictim {
             }
         }
         if (index == -1) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("connection not found");
         }
         FamilyRelation[] newRelation = new FamilyRelation[familyConnections.length-1];
         for (int i = 0; i < newRelation.length; i++) {
@@ -146,7 +146,7 @@ public class DisasterVictim {
 
     public void addMedicalRecord(MedicalRecord record) throws IllegalArgumentException {
         if (record == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("cannot add null record");
         }
         if (medicalRecords == null) {
             medicalRecords = new MedicalRecord[0];
@@ -182,7 +182,7 @@ public class DisasterVictim {
             LocalDate current = LocalDate.now();
             LocalDate adultDate = LocalDate.of(dateOfBirth.getYear()+18, dateOfBirth.getMonthValue(), dateOfBirth.getDayOfMonth());
             if (current.isAfter(adultDate) || current.equals(adultDate)) {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("cannot set gender to " + gender + " as age >= 18");
             }
             String upper = gender.substring(0,1).toUpperCase();
             String lower = gender.substring(1).toLowerCase();
@@ -194,7 +194,7 @@ public class DisasterVictim {
             LocalDate current = LocalDate.now();
             LocalDate adultDate = LocalDate.of(dateOfBirth.getYear()+18, dateOfBirth.getMonthValue(), dateOfBirth.getDayOfMonth());
             if (current.isBefore(adultDate)) {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("cannot set gender to " + gender + " as age < 18");
             }
             String upper = gender.substring(0,1).toUpperCase();
             String lower = gender.substring(1).toLowerCase();
@@ -202,7 +202,7 @@ public class DisasterVictim {
             this.gender = upper + lower;
         }
         else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Invalid gender");
         }
     }
 }
