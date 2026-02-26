@@ -98,6 +98,9 @@ public class Location {
         if (inventory == null) {
             throw new IllegalArgumentException("Supply cannot be null.");
         }
+        if (supplies == null) {
+            supplies = new Supply[0];
+        }
 
         Supply[] newSupplies = new Supply[supplies.length + 1];
         System.arraycopy(supplies, 0, newSupplies, 0, supplies.length);
