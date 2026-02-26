@@ -98,8 +98,7 @@ public class Location {
         }
 
         if (index == -1) {
-            System.out.println("Occupant not found; nothing has been removed.");
-            return; 
+            throw new IllegalArgumentException("No occupant with that name found."); 
         }
 
         DisasterVictim[] newOccupants = new DisasterVictim[occupants.length - 1];
@@ -136,8 +135,7 @@ public class Location {
         }
 
         if (index == -1) {
-            System.out.println("Supply not found; nothing has been removed.");
-            return; 
+            throw new IllegalArgumentException("No supply with that name found."); 
         }
 
         Supply[] newSupplies = new Supply[supplies.length - 1];
