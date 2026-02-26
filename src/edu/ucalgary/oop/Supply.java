@@ -17,7 +17,7 @@ public class Supply {
     public Supply(String type, int quantity) throws IllegalArgumentException {
 
         if (quantity < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Quantity cannot be less than zero.");
         }
 
         this.type = type;
@@ -32,7 +32,7 @@ public class Supply {
     public void setQuantity(int quantity) throws IllegalArgumentException {
 
         if (quantity < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Quantity cannot be less than zero.");
         }
         
         this.quantity = quantity;
