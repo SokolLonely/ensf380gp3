@@ -27,7 +27,7 @@ public class Location {
         this.supplies = new Supply[0];
         }
 
-    // getters and setter
+    // getters and setters
     public String getName() {
         return name;
     }
@@ -72,15 +72,41 @@ public class Location {
         this.supplies = inventory;
     }
 
+    // add and remove 
     public void addOccupant(DisasterVictim occupant){
         if (occupant == null) {
-            throw new IllegalArgumentException("Occupant cannot be null");
+            throw new IllegalArgumentException("Occupant cannot be null.");
         }
 
         DisasterVictim[] newOccupants = new DisasterVictim[occupants.length + 1];
         System.arraycopy(occupants, 0, newOccupants, 0, occupants.length);
+        newOccupants[occupants.length] = occupant;
+        occupants = newOccupants;
+    }
+
+    public void removeOccupant(DisasterVictim occupant){
+        if (occupant == null){
+            throw new IllegalArgumentException("Occupant cannot be null.");
+        }
 
     }
 
-    
+    public void addSupply(Supply inventory){
+        if (inventory == null) {
+            throw new IllegalArgumentException("Supply cannot be null.");
+        }
+
+        Supply[] newSupplies = new Supply[supplies.length + 1];
+        System.arraycopy(supplies, 0, newSupplies, 0, supplies.length);
+        newSupplies[supplies.length] = inventory;
+        supplies = newSupplies;
+    }
+
+    public void removeOccupant(Supply inventory){
+        if (inventory == null){
+            throw new IllegalArgumentException("Supply cannot be null.");
+        }
+
+    }
+
 }
