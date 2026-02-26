@@ -54,9 +54,12 @@ public class Location {
     }
 
     // add and remove 
-    public void addOccupant(DisasterVictim occupant){
+    public void addOccupant(DisasterVictim occupant) throws IllegalArgumentException {
         if (occupant == null) {
             throw new IllegalArgumentException("Occupant cannot be null.");
+        }
+        if (occupants == null){
+            occupants = new DisasterVictim[0];
         }
 
         DisasterVictim[] newOccupants = new DisasterVictim[occupants.length + 1];
@@ -65,9 +68,9 @@ public class Location {
         occupants = newOccupants;
     }
 
-    public void removeOccupant(DisasterVictim occupant){
-        if (occupant == null){
-            throw new IllegalArgumentException("Occupant cannot be null.");
+    public void removeOccupant(DisasterVictim occupant) throws IllegalArgumentException {
+        if (occupants == null){
+            throw new IllegalArgumentException("There are no disaster victim occupants.");
         }
 
         int index = -1;
@@ -91,7 +94,7 @@ public class Location {
         occupants = newOccupants;
     }
 
-    public void addSupply(Supply inventory){
+    public void addSupply(Supply inventory) throws IllegalArgumentException {
         if (inventory == null) {
             throw new IllegalArgumentException("Supply cannot be null.");
         }
@@ -102,9 +105,9 @@ public class Location {
         supplies = newSupplies;
     }
 
-    public void removeSupply(Supply inventory){
-        if (inventory == null){
-            throw new IllegalArgumentException("Supply cannot be null.");
+    public void removeSupply(Supply inventory) throws IllegalArgumentException {
+        if (supplies == null){
+            throw new IllegalArgumentException("There are no supplies.");
         }
 
         int index = -1;
