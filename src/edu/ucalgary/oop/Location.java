@@ -42,9 +42,6 @@ public class Location {
     }
 
      public void setOccupants(DisasterVictim[] occupants) {
-        if (occupants == null) {
-            throw new IllegalArgumentException("Occupants array cannot be null.");
-        }
         this.occupants = occupants;
     }
 
@@ -53,9 +50,6 @@ public class Location {
     }
 
     public void setSupplies(Supply[] inventory) {
-        if (inventory == null) {
-            throw new IllegalArgumentException("Supplies array cannot be null.");
-        }
         this.supplies = inventory;
     }
 
