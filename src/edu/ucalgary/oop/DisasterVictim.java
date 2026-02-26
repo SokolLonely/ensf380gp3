@@ -1,3 +1,9 @@
+/**
+ * Class: DisasterVictim
+ * Date: Feb 26, 2026
+ * Completed by: Benjamin Anderson
+ */
+
 package edu.ucalgary.oop;
 
 import java.time.LocalDate;
