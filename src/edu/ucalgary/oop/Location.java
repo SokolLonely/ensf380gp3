@@ -1,3 +1,10 @@
+/* 
+    ENSF 380 - Object Oriented Principles
+    Group 11
+    Class: Location
+    Completed by: Basema Khan
+ */
+
 package edu.ucalgary.oop;
 import java.lang.IllegalArgumentException;
 
@@ -13,6 +20,10 @@ public class Location {
         }
         this.name = locationName;
         this.address = address;
+
+        // empty arrays
+        this.occupants = new DisasterVictim[0]; 
+        this.supplies = new Supply[0];
         }
 
     // getters and setter
@@ -37,5 +48,38 @@ public class Location {
         }
         this.address = address;
     }
+
+    public DisasterVictim[] getOccupants(){
+        return occupants;
+    }
+
+     public void setOccupants(DisasterVictim[] occupants) {
+        if (occupants == null) {
+            throw new IllegalArgumentException("Occupants array cannot be null.");
+        }
+        this.occupants = occupants;
+    }
+
+    public Supply[] getSupplies() {
+        return supplies;
+    }
+
+    public void setSupplies(Supply[] inventory) {
+        if (inventory == null) {
+            throw new IllegalArgumentException("Supplies array cannot be null.");
+        }
+        this.supplies = inventory;
+    }
+
+    public void addOccupant(DisasterVictim occupant){
+        if (occupant == null) {
+            throw new IllegalArgumentException("Occupant cannot be null");
+        }
+
+        DisasterVictim[] newOccupants = new DisasterVictim[occupants.length + 1];
+        System.arraycopy(occupants, 0, newOccupants, 0, occupants.length);
+
+    }
+
     
 }
