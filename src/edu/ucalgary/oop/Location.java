@@ -18,11 +18,7 @@ public class Location {
     public Location(String locationName, String address){
         this.name = locationName;
         this.address = address;
-
-        // empty arrays
-        this.occupants = new DisasterVictim[0]; 
-        this.supplies = new Supply[0];
-        }
+    }
 
     // getters and setters
     public String getName() {
@@ -30,9 +26,6 @@ public class Location {
     }
 
     public void setName(String locationName) {
-        if (locationName == null) {
-            throw new IllegalArgumentException("Name cannot be null.");
-        }
         this.name = locationName;
     }
 
@@ -41,9 +34,6 @@ public class Location {
     }
 
     public void setAddress(String address) {
-        if (address == null) {
-            throw new IllegalArgumentException("Address cannot be null.");
-        }
         this.address = address;
     }
 
