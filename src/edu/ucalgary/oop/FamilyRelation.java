@@ -7,7 +7,7 @@
 package edu.ucalgary.oop;
 
 public class FamilyRelation {
-    
+
     private DisasterVictim personOne;
     private String relationshipTo;
     private DisasterVictim personTwo;
@@ -34,7 +34,7 @@ public class FamilyRelation {
     /* Throws IllegalArgumentException if person1 is null or the same as person2 */
     public void setPersonOne(DisasterVictim personOne) throws IllegalArgumentException {
         
-        if (personOne == null || personOne == this.personTwo) {
+        if (personOne == null) {
             throw new IllegalArgumentException("personOne cannot be null.");
         }
         if (this.personTwo == personOne) {

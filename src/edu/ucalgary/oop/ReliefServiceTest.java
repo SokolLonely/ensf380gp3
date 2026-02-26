@@ -92,7 +92,7 @@ public class ReliefServiceTest {
     */
     @Test(expected = IllegalArgumentException.class)
     public void testSetDateOfInquiryWithFutureDate() {
-        LocalDate futureDate = LocalDate.parse("2100-12-12");
+        LocalDate futureDate = LocalDate.parse("2026-03-28");
         reliefService.setDateOfInquiry(futureDate);
     }
 
