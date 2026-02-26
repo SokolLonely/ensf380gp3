@@ -19,6 +19,9 @@ public class MedicalRecord {
         if(location == null || treatmentDetails == null || dateOfTreatment == null){
             throw new IllegalArgumentException("Location, treatment details and date of treatment cannot be null.");
         }
+        if (dateOfTreatment.isAfter(LocalDate.now())){
+            throw new IllegalArgumentException("Date cannot be in the future.");
+        }
         this.location = location;
         this.treatmentDetails = treatmentDetails;
         this.dateOfTreatment = dateOfTreatment;
@@ -54,6 +57,9 @@ public class MedicalRecord {
     public void setDateOfTreatment(LocalDate dateOfTreatment){
         if (dateOfTreatment == null){
             throw new IllegalArgumentException("Date of treatment cannot be null.");
+        }
+        if (dateOfTreatment.isAfter(LocalDate.now())){
+            throw new IllegalArgumentException("Date cannot be in the future.");
         }
         this.dateOfTreatment = dateOfTreatment;
     }
