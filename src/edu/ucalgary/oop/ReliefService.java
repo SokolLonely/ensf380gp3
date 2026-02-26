@@ -9,7 +9,7 @@ public class ReliefService {
     private String infoProvided;
     private Location lastKnownLocation;
     
-    ReliefService(Inquirer inquirer, DisasterVictim missingPerson, LocalDate inquiryDate, String infoProvided, Location lastLocation)
+    public ReliefService(Inquirer inquirer, DisasterVictim missingPerson, LocalDate inquiryDate, String infoProvided, Location lastLocation)
     {
         this.inquirer = inquirer;
         this.missingPerson = missingPerson;
@@ -18,32 +18,32 @@ public class ReliefService {
         this.lastKnownLocation = lastLocation;
     }
 
-    Inquirer getInquirer() 
+    public Inquirer getInquirer() 
     {
         return this.inquirer;
     }
 
-    void setInquirer(Inquirer inqurier)
+    public void setInquirer(Inquirer inqurier)
     {
         this.inquirer = inqurier;
     }
 
-    DisasterVictim getMissingPerson() 
+    public DisasterVictim getMissingPerson() 
     {
         return missingPerson;
     }
 
-    void setMissingPerson(DisasterVictim missingPerson)
+    public void setMissingPerson(DisasterVictim missingPerson)
     {
         this.missingPerson = missingPerson;
     }
 
-    LocalDate getDateOfInquiry()
+    public LocalDate getDateOfInquiry()
     {
         return dateOfInquiry;
     }
 
-    void setDateOfInquiry(LocalDate inquryDate) throws IllegalArgumentException
+    public void setDateOfInquiry(LocalDate inquryDate) throws IllegalArgumentException
     {
         if (inquryDate) {
             throw new IllegalArgumentException("Date of inquiry cannot be null.");
@@ -51,27 +51,27 @@ public class ReliefService {
         this.dateOfInquiry = inquryDate;
     }
 
-    String getInfoProvided()
+    public String getInfoProvided()
     {
         return infoProvided;
     }
 
-    void setInfoProvided(String info)
+    public void setInfoProvided(String info)
     {
         this.infoProvided = info;
     }
 
-    Location getLastKnownLocation() 
+    public Location getLastKnownLocation() 
     {
         return lastKnownLocation;
     }
 
-    void setLastKnownLocation(Location lastLocation)
+    public void setLastKnownLocation(Location lastLocation)
     {
         this.lastKnownLocation = lastLocation;
     }
-    
-    String getLogDetails() 
+
+    public String getLogDetails() 
     {
         return "Inquirer: " + inquirer.getFirstName() + " " + inquirer.getLastName() + ", Missing Person: " + missingPerson.getName() + ", Date of Inquiry: " + dateOfInquiry.toString() + ", Info Provided: " + infoProvided + ", Last Known Location: " + lastKnownLocation.getName();
     }

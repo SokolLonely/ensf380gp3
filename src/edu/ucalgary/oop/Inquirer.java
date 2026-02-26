@@ -6,7 +6,7 @@ public class Inquirer {
     private final String INFO;
     private final String SERVICES_PHONE;
 
-    Inquirer(String firstName, String lastName, String phone, String info)
+    public Inquirer(String firstName, String lastName, String phone, String info)
     {
         this.FIRST_NAME =firstName;
         this.LAST_NAME = lastName;
@@ -14,22 +14,22 @@ public class Inquirer {
         this.INFO = info;
     }
 
-    String getFirstName()
+    public String getFirstName()
     {
         return this.FIRST_NAME;
     }
-    
-    String getLastName() 
+
+    public String getLastName() 
     {
         return this.LAST_NAME;
     }
 
-    String getServicesPhoneNum()
+    public String getServicesPhoneNum()
     {
         return this.SERVICES_PHONE;
     }
 
-    String getInfo()
+    public String getInfo()
     {
         return this.INFO;
     }
