@@ -1,6 +1,7 @@
 package edu.ucalgary.oop;
 
 import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 
 public class ReliefService {
     private Inquirer inquirer;
@@ -39,8 +40,12 @@ LocalDate getDateOfInquiry()
 }
 void setDateOfInquiry(LocalDate inquryDate) throws IllegalArgumentException
 {
-    if (inquryDate) {
+    if (inquryDate == null) {
         throw new IllegalArgumentException("Date of inquiry cannot be null.");
+    }
+    LocalDate today = LocalDate.now();
+     if (inquryDate.isAfter(today)) {
+        throw new IllegalArgumentException("Date of inquiry cannot be in the future");
     }
     this.dateOfInquiry = inquryDate;
 }
@@ -62,6 +67,6 @@ void setLastKnownLocation(Location lastLocation)
 }
 String getLogDetails() 
 {
-    return "Inquirer: " + inquirer.getFirstName() + " " + inquirer.getLastName() + ", Missing Person: " + missingPerson.getName() + ", Date of Inquiry: " + dateOfInquiry.toString() + ", Info Provided: " + infoProvided + ", Last Known Location: " + lastKnownLocation.getName();
+    return "Inquirer: " + inquirer.getFirstName()  + ", Missing Person: " + missingPerson.getFirstName() + ", Date of Inquiry: " + dateOfInquiry.toString() + ", Info Provided: " + infoProvided + ", Last Known Location: " + lastKnownLocation.getName();
 }
 } //         "Inquirer: John, Missing Person: Jane Alex, Date of Inquiry: 2025-02-10, Info Provided: Looking for family member,        Last Known Location:  University of Calgary"
