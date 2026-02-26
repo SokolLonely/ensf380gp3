@@ -7,7 +7,6 @@
 
 package edu.ucalgary.oop;
 import java.lang.IllegalArgumentException;
-import java.util.Arrays;
 
 public class Location {
     private String name;
@@ -98,9 +97,10 @@ public class Location {
             }
         }
 
-        if (index == -1) 
+        if (index == -1) {
             System.out.println("Occupant not found; nothing has been removed.");
             return; 
+        }
 
         DisasterVictim[] newOccupants = new DisasterVictim[occupants.length - 1];
         for (int i = 0, j = 0; i < occupants.length; i++) {
@@ -126,7 +126,7 @@ public class Location {
         if (inventory == null){
             throw new IllegalArgumentException("Supply cannot be null.");
         }
-        
+
         int index = -1;
         for (int i = 0; i < supplies.length; i++) {
             if (supplies[i].equals(inventory)) {
@@ -135,9 +135,10 @@ public class Location {
             }
         }
 
-        if (index == -1) 
+        if (index == -1) {
             System.out.println("Supply not found; nothing has been removed.");
             return; 
+        }
 
         Supply[] newSupplies = new Supply[supplies.length - 1];
         for (int i = 0, j = 0; i < supplies.length; i++) {
