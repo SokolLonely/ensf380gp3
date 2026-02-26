@@ -1,3 +1,9 @@
+/**
+ * Class: FamilyRelation
+ * Date: Feb 26, 2026
+ * Completed by: Calvin Shaw
+ */
+
 package edu.ucalgary.oop;
 
 public class FamilyRelation {
@@ -5,7 +11,7 @@ public class FamilyRelation {
     private String relationshipTo;
     private DisasterVictim personTwo;
 
-    public FamilyRelation(DisasterVictim personOne, String relationshipTo, DisasterVictim personTwo) {
+    public FamilyRelation(DisasterVictim personOne, String relationshipTo, DisasterVictim personTwo) throws IllegalArgumentException {
         this.personOne = personOne;
         this.personTwo = personTwo;
         this.relationshipTo = relationshipTo;
@@ -15,7 +21,7 @@ public class FamilyRelation {
         return this.personOne;
     }
 
-    public void setPersonOne(DisasterVictim personOne) {
+    public void setPersonOne(DisasterVictim personOne) throws IllegalArgumentException {
 
     }
 
@@ -31,7 +37,7 @@ public class FamilyRelation {
         return this.personTwo;
     }
 
-    public void setPersonTwo(DisasterVictim personTwo) {
+    public void setPersonTwo(DisasterVictim personTwo) throws IllegalArgumentException {
 
     }
 
