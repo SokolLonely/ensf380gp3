@@ -45,7 +45,7 @@ public class ReliefService {
 
     public void setDateOfInquiry(LocalDate inquryDate) throws IllegalArgumentException
     {
-        if (inquryDate) {
+        if (inquryDate == null) {
             throw new IllegalArgumentException("Date of inquiry cannot be null.");
         }
         this.dateOfInquiry = inquryDate;
