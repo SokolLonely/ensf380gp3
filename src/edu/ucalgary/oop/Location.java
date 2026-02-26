@@ -14,6 +14,7 @@ public class Location {
     private DisasterVictim[] occupants;
     private Supply[] supplies;
 
+    // constructor
     public Location(String locationName, String address){
         if (locationName == null || address == null) {
             throw new IllegalArgumentException("Name and address cannot be null.");
